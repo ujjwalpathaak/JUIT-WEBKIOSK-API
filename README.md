@@ -28,14 +28,8 @@ BASE URL: https://juit-webkiosk-api-6v2h.onrender.com/
 }
 ```
 
-```
-{
-    "response": "Wrong Credientials"
-}
-```
-
 - `/personaldetails`  
-  Get personal details from the WebKiosk portal.
+  Get personal details.
 
 **Response:**
 
@@ -51,149 +45,221 @@ BASE URL: https://juit-webkiosk-api-6v2h.onrender.com/
     "studentEmail": "pathak2002ujjwal@gmail.com",
     "parentEmail": "pathakdeep2003@gmail.com,rupalpath@gmail.com",
     "address": "2308 Verona,  Mahagun Moderne Sector-78",
-    "xMarks": "(kindly use my API to check urs :| )",
-    "xiiMarks": "(kindly use my API to check urs :| )"
+    "xMarks": "( use my API to see ur own :P )",
+    "xiiMarks": "( use my API to see ur own :P )"
 }
 ```
 
-- `/attendance`  
-  Get attendance details from the WebKiosk portal.
+- `/gpa`  
+  Get CGPA and SGPA for each semester.
 
 **Response:**
+
+```
+[
+    {
+        "Semester": "1",
+        "SGPA": "9.43",
+        "CGPA": "9.43"
+    }
+]
+```
+
+### Required request body
 
 ```
 {
-    "Subject0": "DATA SIMULATION LAB - 18B17CI473",
-    "Attendance0": "80%",
-    "Subject1": "DESIGN & ANALYSIS OF ALGORITHMS - 18B11CI412",
-    "Attendance1": "85%",
-    "Subject2": "DESIGN AND ANALYSIS OF ALGORITHMS LAB - 18B17CI472",
-    "Attendance2": "60%",
-    "Subject3": "DISCRETE COMPUTATIONAL MATHEMATICS - 18B11CI414",
-    "Attendance3": "76%",
-    "Subject4": "ENVIRONMENTAL STUDIES - 18B11GE411",
-    "Attendance4": "90%",
-    "Subject5": "FINANCE AND ACCOUNTS - 18B11HS411",
-    "Attendance5": "80%",
-    "Subject6": "MODELING AND SIMULATION TECHNIQUES - 18B11CI413",
-    "Attendance6": "90%",
-    "Subject7": "OPERATING SYSTEM LAB - 18B17CI471",
-    "Attendance7": "81%",
-    "Subject8": "OPERATING SYSTEMS - 18B11CI411",
-    "Attendance8": "61%",
-    "Subject9": "WEB TECH LAB - 18B17CI474",
-    "Attendance9": "80%"
+    "rollnumber": "XXXXXXXX",
+    "password": "XXXXXXXX"
+    "examcode": "2023EVESEM"
 }
 ```
-<!--
-* ```/v1.0/attendance```
-  Get attendance details for a given semester.
 
+### Endpoints
 
-* ```/v1.0/cgpa```
-  Get the CGPA report for all semesters.
+- `/attendance`  
+  Login into the JUIT WebKiosk portal.
 
-
-* ```/v1.0/grades```
-  Get the Exam Grades for a given semesters.
-
-
-* ```/v1.0/semesters```
-  Get the list of valid Semester Codes.
-
-
-* ```/v1.0/faculty```
-  Get the list of registered subject faculty.
-
-
-* ```/v1.0/subjects```
-  Get the list of registered subjects for a given semester
-
-
-## Examples
-
-- ### Personal Details.
-**Endpoint:**
-```https://juit-webkiosk-api.herokuapp.com/v1.0/personalDetails/```
-**Body:**
- ```
- {
-    "username":"xxxxx",
-    "password":"xxxxx"
- }
-```
 **Response:**
-  ```
-  {
-    "Name": "Aarhan Ali Khan",
-    "Rollno": "201221",
-    "FathersName": "xxxx",
-    "Course": "B.T. ( CSE)",
-    "Semester": "4",
-    "Mobile": "xxxxx",
-    "ParentMobile": "xxxxx",
-    "Email": "xxxxx",
-    "address": "xxxx",
-    "percentage12": "not that great to be put on display",
-    "percentage10": "not that great to be put on display"
-  }
-  ```
-- ### Faculty
 
-**(NOTE- Pass in different semester codes, can get the available semester codes by calling the /semesters endpoint)**
-
-**Endpoint:**
-```https://juit-webkiosk-api.herokuapp.com/v1.0/grades/2020ODDSEM```
-**Body:**
- ```
- {
-    "username":"xxxxx",
-    "password":"xxxxx"
- }
 ```
-**Response:**
-  ```
-  [
+[
     {
-        "SubjectName": "ENGINEERING MATHEMATICS-I(18B11MA111)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A+"
+        "subject": "DATA SIMULATION LAB - 18B17CI473",
+        "attendance": "80%"
     },
     {
-        "SubjectName": "ENGINEERING PHYSICS LAB-I(18B17PH171)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A"
+        "subject": "DESIGN & ANALYSIS OF ALGORITHMS - 18B11CI412",
+        "attendance": "81%"
     },
     {
-        "SubjectName": "ENGINEERING PHYSICS-I(18B11PH111)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "B+"
+        "subject": "DESIGN AND ANALYSIS OF ALGORITHMS LAB - 18B17CI472",
+        "attendance": "75%"
     },
     {
-        "SubjectName": "ENGLISH AND TECHNICAL COMMUNICATION LAB(18B17HS171)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A+"
+        "subject": "DISCRETE COMPUTATIONAL MATHEMATICS - 18B11CI414",
+        "attendance": "78%"
     },
     {
-        "SubjectName": "ENGLISH AND TECHNICAL COMMUNICATION(18B11HS111)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A+"
+        "subject": "ENVIRONMENTAL STUDIES - 18B11GE411",
+        "attendance": "90%"
     },
     {
-        "SubjectName": "PROGRAMMING FOR PROBLEM SOLVING LAB-II(19B17CI171)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A"
+        "subject": "FINANCE AND ACCOUNTS - 18B11HS411",
+        "attendance": "80%"
     },
     {
-        "SubjectName": "PROGRAMMING FOR PROBLEM SOLVING-II(19B11CI111)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A"
+        "subject": "MODELING AND SIMULATION TECHNIQUES - 18B11CI413",
+        "attendance": "92%"
     },
     {
-        "SubjectName": "WORKSHOP PRACTICES(18B17GE171)",
-        "ExamCode": "2020ODDSEM",
-        "Grade": "A"
+        "subject": "OPERATING SYSTEM LAB - 18B17CI471",
+        "attendance": "84%"
+    },
+    {
+        "subject": "OPERATING SYSTEMS - 18B11CI411",
+        "attendance": "65%"
+    },
+    {
+        "subject": "WEB TECH LAB - 18B17CI474",
+        "attendance": "83%"
     }
 ]
-  ```
- flexing online sem grades ⌐■_■ -->
+```
+
+- `/marks`  
+  Get marks according to semester code.
+
+**Response:**
+
+```
+[
+    {
+        "Subject": "DESIGN & ANALYSIS OF ALGORITHMS- 18B11CI412",
+        "T1Marks": "8.0"
+    },
+    {
+        "Subject": "DISCRETE COMPUTATIONAL MATHEMATICS- 18B11CI414",
+        "T1Marks": "9.0"
+    },
+    {
+        "Subject": "FINANCE AND ACCOUNTS- 18B11HS411",
+        "T1Marks": "11.5"
+    },
+    {
+        "Subject": "MODELING AND SIMULATION TECHNIQUES- 18B11CI413",
+        "T1Marks": "10.0"
+    },
+    {
+        "Subject": "OPERATING SYSTEMS- 18B11CI411",
+        "T1Marks": "10.0"
+    }
+]
+```
+
+- `/faculty`  
+  Login into the JUIT WebKiosk portal.
+
+**Response:**
+
+```
+[
+    {
+        "subject": "MODELING AND SIMULATION TECHNIQUES(18B11CI413)",
+        "lecFaculty": "NAFIS UDDIN KHAN"
+    },
+    {
+        "subject": "DISCRETE COMPUTATIONAL MATHEMATICS(18B11CI414)",
+        "lecFaculty": "PRADEEP KUMAR PANDEY"
+    },
+    {
+        "subject": "DATA SIMULATION LAB(18B17CI473)",
+        "pracFaculty": "ALOK KUMAR"
+    },
+    {
+        "subject": "OPERATING SYSTEM LAB(18B17CI471)",
+        "pracFaculty": "DEEPAK GUPTA"
+    },
+    {
+        "subject": "ENVIRONMENTAL STUDIES(18B11GE411)",
+        "lecFaculty": "POONAM SHARMA"
+    },
+    {
+        "subject": "OPERATING SYSTEMS(18B11CI411)",
+        "lecFaculty": "PRADEEP KUMAR GUPTA"
+    },
+    {
+        "subject": "WEB TECH LAB(18B17CI474)",
+        "pracFaculty": "SUNIL DATT SHARMA"
+    },
+    {
+        "subject": "FINANCE AND ACCOUNTS(18B11HS411)",
+        "lecFaculty": "AMIT SRIVASTAVA"
+    },
+    {z
+        "subject": "DESIGN AND ANALYSIS OF ALGORITHMS LAB(18B17CI472)",
+        "pracFaculty": "DIKSHA HOODA"
+    },
+    {
+        "subject": "DESIGN & ANALYSIS OF ALGORITHMS(18B11CI412)",
+        "lecFaculty": "DIKSHA HOODA"
+    }
+]
+```
+
+- `/subjects`  
+  Login into the JUIT WebKiosk portal.
+
+**Response:**
+
+```
+[
+    {
+        "subject": "ENVIRONMENTAL STUDIES(18B11GE411)",
+        "credits": "0"
+    },
+    {
+        "subject": "DESIGN AND ANALYSIS OF ALGORITHMS LAB(18B17CI472)",
+        "credits": "1"
+    },
+    {
+        "subject": "DATA SIMULATION LAB(18B17CI473)",
+        "credits": "2"
+    },
+    {
+        "subject": "DESIGN AND ANALYSIS OF ALGORITHMS LAB(18B17CI472)",
+        "credits": "2"
+    },
+    {
+        "subject": "MODELING AND SIMULATION TECHNIQUES(18B11CI413)",
+        "credits": "2"
+    },
+    {
+        "subject": "OPERATING SYSTEM LAB(18B17CI471)",
+        "credits": "2"
+    },
+    {
+        "subject": "WEB TECH LAB(18B17CI474)",
+        "credits": "2"
+    },
+    {
+        "subject": "DESIGN & ANALYSIS OF ALGORITHMS(18B11CI412)",
+        "credits": "3"
+    },
+    {
+        "subject": "DISCRETE COMPUTATIONAL MATHEMATICS(18B11CI414)",
+        "credits": "3"
+    },
+    {
+        "subject": "FINANCE AND ACCOUNTS(18B11HS411)",
+        "credits": "3"
+    },
+    {
+        "subject": "OPERATING SYSTEMS(18B11CI411)",
+        "credits": "3"
+    },
+    {
+        "totalCredits": "23.0"
+    }
+]
+```
