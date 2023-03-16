@@ -40,10 +40,10 @@ BASE URL: https://juit-webkiosk-api-6v2h.onrender.com/
     "fatherName": "Deepak Pathak",
     "course": "( CSE)",
     "semester": "4",
-    "studentNumber": "8448772593",
-    "parentNumber": "9871468245,9999574593",
+    "studentNumber": "844xxxxxxx",
+    "parentNumber": "xxxxxxxxx,xxxxxxxxx",
     "studentEmail": "pathak2002ujjwal@gmail.com",
-    "parentEmail": "pathakdeep2003@gmail.com,rupalpath@gmail.com",
+    "parentEmail": "patxxxxxxxxxxx@gmail.com,rupxxxxxxx@gmail.com",
     "address": "2308 Verona,  Mahagun Moderne Sector-78",
     "xMarks": "( use my API to see ur own :P )",
     "xiiMarks": "( use my API to see ur own :P )"
