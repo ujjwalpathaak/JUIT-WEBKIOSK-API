@@ -41,7 +41,7 @@ BASE URL: https://juit-webkiosk-api-6v2h.onrender.com/
     "course": "( CSE)",
     "semester": "4",
     "studentNumber": "844xxxxxxx",
-    "parentNumber": "xxxxxxxxx,xxxxxxxxx",
+    "parentNumber": "987xxxxxx,999xxxxxx",
     "studentEmail": "pathak2002ujjwal@gmail.com",
     "parentEmail": "patxxxxxxxxxxx@gmail.com,rupxxxxxxx@gmail.com",
     "address": "2308 Verona,  Mahagun Moderne Sector-78",
